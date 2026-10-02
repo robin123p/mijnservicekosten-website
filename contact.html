@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Mijn Servicekosten</title>
+<meta name="description" content="Neem contact op met Mijn Servicekosten voor een demo of vragen over servicekosten inzicht voor woningcorporaties.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2312233f'/%3E%3Ctext x='32' y='42' font-family='Arial, sans-serif' font-weight='800' font-size='24' fill='%23e8a33d' text-anchor='middle'%3ESK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="logo"><span class="logo-mijn">Mijn</span><span class="logo-service">Service</span><span class="logo-kosten">kosten</span></span>
+    </a>
+
+    <nav class="nav-desktop">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="hoe-het-werkt.html">Hoe het werkt</a></li>
+        <li><a href="over-ons.html">Over ons</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+      <div class="nav-cta-group">
+        <a href="https://portaal.mijnservicekosten.nl" class="btn btn-ghost">Inloggen</a>
+      </div>
+    </nav>
+
+    <button class="nav-toggle" type="button" aria-label="Menu openen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="nav-mobile">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="hoe-het-werkt.html">Hoe het werkt</a></li>
+      <li><a href="over-ons.html">Over ons</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="https://portaal.mijnservicekosten.nl" class="btn btn-ghost btn-block">Inloggen</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Contact</div>
+      <span class="eyebrow">Neem contact op</span>
+      <h1>Laten we <em>kennismaken</em></h1>
+      <p class="lede">Vul het formulier in voor een demo of met een vraag. We nemen zo snel mogelijk contact met je op.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split split--top">
+      <div>
+        <div class="form-success" id="form-success">
+          <span>Bedankt voor je bericht! Dit formulier is nog niet gekoppeld aan e-mailverzending, dus er wordt momenteel nog geen bericht daadwerkelijk verzonden.</span>
+        </div>
+
+        <form id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Naam *</label>
+              <input type="text" id="name" name="name" required>
+              <span class="field-error">Vul je naam in.</span>
+            </div>
+            <div class="field">
+              <label for="organisation">Organisatie *</label>
+              <input type="text" id="organisation" name="organisation" required>
+              <span class="field-error">Vul je organisatie in.</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="email">E-mailadres *</label>
+              <input type="email" id="email" name="email" required>
+              <span class="field-error">Vul een geldig e-mailadres in.</span>
+            </div>
+            <div class="field">
+              <label for="phone">Telefoonnummer <span class="hint">(optioneel)</span></label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Bericht *</label>
+            <textarea id="message" name="message" required placeholder="Vertel kort waar je meer over wilt weten..."></textarea>
+            <span class="field-error">Laat een bericht achter.</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Bericht versturen</button>
+          <p class="form-note">Door dit formulier te versturen ga je akkoord dat we contact met je opnemen naar aanleiding van je bericht.</p>
+        </form>
+      </div>
+
+      <div>
+        <h2>Liever direct mailen</h2>
+
+        <ul class="contact-info-list">
+          <li>
+            <span class="info-label">E-mail</span>
+            <div>
+              <strong>info@mijnservicekosten.nl</strong>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer on-dark">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a href="index.html" class="brand">
+          <span class="logo"><span class="logo-mijn">Mijn</span><span class="logo-service">Service</span><span class="logo-kosten">kosten</span></span>
+        </a>
+        <p>Betrouwbaar en efficiënt inzicht in servicekosten voor woningcorporaties, en straks ook voor huurders.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigatie</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="hoe-het-werkt.html">Hoe het werkt</a></li>
+          <li><a href="over-ons.html">Over ons</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Hulp</h4>
+        <ul>
+          <li><a href="faq.html">Veelgestelde vragen</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>info@mijnservicekosten.nl</li>
+          <li>Nederland</li>
+          <li>KVK: <span class="placeholder">nog niet bekend</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Mijn Servicekosten. Alle rechten voorbehouden.</span>
+      <span class="footer-bottom-links">
+        <a href="privacyverklaring.html">Privacyverklaring</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
