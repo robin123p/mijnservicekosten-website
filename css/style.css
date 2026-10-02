@@ -783,32 +783,41 @@ p { margin: 0 0 1em; }
 
 .form-note { font-size: 0.82rem; color: var(--stone-500); margin-top: 18px; }
 
-.form-success {
-  display: none;
-  align-items: flex-start;
-  gap: 14px;
-  border: 1.5px solid var(--mint-500);
-  color: var(--mint-500);
-  padding: 22px 24px;
-  margin-bottom: 30px;
-  font-weight: 600;
-}
-
-.form-success.visible { display: flex; }
-
+.form-success,
 .form-error {
   display: none;
-  align-items: flex-start;
-  gap: 14px;
-  border: 1.5px solid var(--coral-600);
-  color: var(--coral-600);
-  padding: 22px 24px;
+  padding: 24px 26px;
   margin-bottom: 30px;
+  border-radius: var(--radius-md);
+}
+
+.form-success.visible,
+.form-error.visible { display: block; }
+
+.form-success { background: var(--sage); }
+.form-error { background: var(--blush); }
+
+.form-success .form-alert-label,
+.form-error .form-alert-label {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.form-success .form-alert-label { color: var(--mint-500); }
+.form-error .form-alert-label { color: var(--coral-600); }
+
+.form-success p,
+.form-error p {
+  margin: 0;
+  color: var(--navy-900);
   font-weight: 600;
 }
 
 .form-error a { text-decoration: underline; }
-.form-error.visible { display: flex; }
 
 .hidden-field {
   position: absolute;
