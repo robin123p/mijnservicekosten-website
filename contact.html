@@ -66,10 +66,18 @@
     <div class="container split split--top">
       <div>
         <div class="form-success" id="form-success">
-          <span>Bedankt voor je bericht! Dit formulier is nog niet gekoppeld aan e-mailverzending, dus er wordt momenteel nog geen bericht daadwerkelijk verzonden.</span>
+          <span>Bedankt voor je bericht! We nemen zo snel mogelijk contact met je op.</span>
+        </div>
+
+        <div class="form-error" id="form-error">
+          <span>Er ging iets mis bij het verzenden. Probeer het opnieuw, of mail ons direct op <a href="mailto:info@mijnservicekosten.nl">info@mijnservicekosten.nl</a>.</span>
         </div>
 
         <form id="contact-form" novalidate>
+          <input type="hidden" name="access_key" value="34e467fe-ea67-4343-906b-a2cc24b60a03">
+          <input type="hidden" name="subject" value="Nieuw bericht via het contactformulier - Mijn Servicekosten">
+          <input type="checkbox" name="botcheck" class="hidden-field" tabindex="-1" autocomplete="off">
+
           <div class="form-row">
             <div class="field">
               <label for="name">Naam *</label>

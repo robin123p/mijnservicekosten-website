@@ -36,9 +36,16 @@ document.addEventListener("DOMContentLoaded", function () {
   var form = document.querySelector("#contact-form");
   if (form) {
     var successBox = document.querySelector("#form-success");
+    var errorBox = document.querySelector("#form-error");
+    var submitBtn = form.querySelector("button[type='submit']");
+    var submitBtnDefaultText = submitBtn ? submitBtn.textContent : "";
 
     form.addEventListener("submit", function (event) {
       event.preventDefault();
+
+      if (errorBox) {
+        errorBox.classList.remove("visible");
+      }
 
       var isValid = true;
       form.querySelectorAll("[required]").forEach(function (field) {
@@ -62,12 +69,41 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      /* Front-end only: geen daadwerkelijke verzending gekoppeld. */
-      form.reset();
-      form.hidden = true;
-      if (successBox) {
-        successBox.classList.add("visible");
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Versturen...";
       }
+
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form)
+      })
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (result) {
+          if (result.success) {
+            form.reset();
+            form.hidden = true;
+            if (successBox) {
+              successBox.classList.add("visible");
+            }
+          } else {
+            throw new Error(result.message || "Versturen mislukt");
+          }
+        })
+        .catch(function () {
+          if (errorBox) {
+            errorBox.classList.add("visible");
+          }
+        })
+        .finally(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = submitBtnDefaultText;
+          }
+        });
     });
   }
 });
