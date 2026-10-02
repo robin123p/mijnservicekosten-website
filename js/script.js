@@ -74,23 +74,20 @@ document.addEventListener("DOMContentLoaded", function () {
         submitBtn.textContent = "Versturen...";
       }
 
-      fetch("https://api.web3forms.com/submit", {
+      fetch("https://formspree.io/f/mbglvvqj", {
         method: "POST",
         headers: { Accept: "application/json" },
         body: new FormData(form)
       })
         .then(function (response) {
-          return response.json();
-        })
-        .then(function (result) {
-          if (result.success) {
+          if (response.ok) {
             form.reset();
             form.hidden = true;
             if (successBox) {
               successBox.classList.add("visible");
             }
           } else {
-            throw new Error(result.message || "Versturen mislukt");
+            throw new Error("Versturen mislukt");
           }
         })
         .catch(function () {
